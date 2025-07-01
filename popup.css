@@ -1,0 +1,252 @@
+:root {
+    --bg-color: #f9fafb;
+    --fg-color: #111827;
+    --primary-accent: #3b82f6;
+    --primary-accent-hover: #2563eb;
+    --subtle-button-bg: #e5e7eb;
+    --subtle-button-bg-hover: #d1d5db;
+    --input-border: #d1d5db;
+    --input-focus-ring: rgba(59, 130, 246, 0.4);
+    --body-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1f2937;
+        --fg-color: #f3f4f6;
+        --subtle-button-bg: #4b5563;
+        --subtle-button-bg-hover: #6b7280;
+        --input-border: #4b5563;
+    }
+}
+
+body {
+    width: 280px;
+    margin: 0;
+    font-family: var(--body-font);
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'case' on;
+}
+
+.app-container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.title-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.title-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.title-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-accent);
+}
+
+.main-title {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+#settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.configuration-section,
+.credentials-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-group,
+.fieldset-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label,
+.legend-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--fg-color);
+}
+
+.dropdown-select,
+.text-input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--input-border);
+    border-radius: 0.375rem;
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    font-size: 0.875rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.dropdown-select:focus,
+.text-input:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px var(--input-focus-ring);
+}
+
+.fieldset-group {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.legend-title {
+    padding: 0;
+    margin-bottom: 0.25rem;
+}
+
+.radio-options {
+    display: flex;
+    gap: 1rem;
+}
+
+.radio-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.radio-options input[type="radio"] {
+    appearance: none;
+    width: 1.15em;
+    height: 1.15em;
+    border: 2px solid var(--input-border);
+    border-radius: 50%;
+    margin: 0;
+    transition: all 0.1s ease-in-out;
+}
+
+.radio-options input[type="radio"]:checked {
+    border: 5px solid var(--primary-accent);
+}
+
+.api-key-wrapper {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.button-subtle {
+    padding: 0 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: var(--subtle-button-bg);
+    color: var(--fg-color);
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button-subtle:hover {
+    background-color: var(--subtle-button-bg-hover);
+}
+
+.action-footer {
+    margin-top: 0.5rem;
+}
+
+.button-main {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: var(--primary-accent);
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button-main:hover {
+    background-color: var(--primary-accent-hover);
+}
+
+.button-icon {
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    margin: 0;
+    cursor: pointer;
+    color: var(--fg-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-icon:hover {
+    background-color: var(--subtle-button-bg);
+}
+
+.icon-gear {
+    width: 20px;
+    height: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .icon-gear {
+        filter: invert(1);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.slider-input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: var(--subtle-button-bg);
+    outline: none;
+    border-radius: 4px;
+    transition: opacity .2s;
+}
+
+.slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--primary-accent);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.slider-input::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--primary-accent);
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+}
